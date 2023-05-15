@@ -13,7 +13,6 @@
  
 - Stampa separatamente i 3 array.*/
 
-
 // - Crea un array composto da 10 automobili.
 const allAuto = [
     {
@@ -77,23 +76,25 @@ const allAuto = [
 
     },
 ];
-         
+
 // - Dividi le automobili in 3 array separati:
-const autoDiesel = [];
-const autoElse = [];
-const autoBenzina = allAuto.filter (
-    (element) => {
+const autoBenzina = allAuto.filter ((element) => {
         if (element.alimentazione === 'benzina'){
             return true
-        }else if (element.alimentazione === 'diesel') {
-            autoDiesel.push(element);
-        }else{
-            autoElse.push(element);
         }
-    }
-);
-
-// - Stampa separatamente i 3 array.
+    });
 console.log(autoBenzina);
+
+const autoDiesel = allAuto.filter ((element) => {
+    if (element.alimentazione === 'diesel'){
+        return true
+    }
+});
 console.log(autoDiesel);
+
+const autoElse = allAuto.filter ((element) => {
+    if (element.alimentazione !== 'benzina' && element.alimentazione !== 'diesel'){
+        return true
+    }
+});
 console.log(autoElse);
